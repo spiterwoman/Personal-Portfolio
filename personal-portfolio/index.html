@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="./assets/visuals/about-porttrait.jpg"/>
 
   <link rel="stylesheet" href="./styles.css"/>
 </head>
@@ -107,30 +108,30 @@ and improving regression reliability across modules.</li>
             <img class="arm" data-target="rect" src="./assets/chain-link.png" alt="chain to Portfolio tag"/>
           </div>
 
-          <a class="tag tag-left" data-id="tri" href="#visual" data-depth="42" data-rot="-10" data-x="-240" data-y="260" aria-label="DeepBlue visual projects">
+          <a class="tag tag-left" data-id="tri" href="#visual" data-slide="0" data-depth="42" data-rot="-10" data-x="-240" data-y="260" aria-label="DeepBlue visual projects">
             <span class="hook"></span>
             <span class="tag-face">
               <span class="tag-meta">TAG 01</span>
               <span class="tag-title">DeepBlue</span>
-              <span class="tag-desc">A minimal LAMP web app for organizing contacts with quick search, add/edit, and notes—wrapped in an ocean-inspired, responsive UI.</span>
+              <span class="tag-desc">A minimal LAMP web app for organizing contacts with quick search, add/edit, and notes-wrapped in an ocean-inspired, responsive UI.</span>
             </span>
           </a>
 
-          <a class="tag tag-mid" data-id="oval" href="#visual" data-depth="34" data-rot="2" data-x="0" data-y="240" aria-label="Toki visual projects">
+          <a class="tag tag-mid" data-id="oval" href="#visual" data-slide="1" data-depth="34" data-rot="2" data-x="0" data-y="240" aria-label="Toki visual projects">
             <span class="hook"></span>
             <span class="tag-face">
               <span class="tag-meta">TAG 02</span>
               <span class="tag-title">Toki</span>
-              <span class="tag-desc">MERN app with a Daily Summary (tasks, events, priority), Calendar, Weather (emoji + highs/lows + sunrise/sunset), NASA Photo of the Day, and UCF Parking Tracker—with glassmorphism and a starry background.</span>
+              <span class="tag-desc">MERN app with a Daily Summary (tasks, events, priority), Calendar, Weather (emoji + highs/lows + sunrise/sunset), NASA Photo of the Day, and UCF Parking Tracker-with glassmorphism and a starry background.</span>
             </span>
           </a>
 
-          <a class="tag tag-right" data-id="rect" href="#builds" data-depth="40" data-rot="12" data-x="240" data-y="260" aria-label="Portfolio builds">
+          <a class="tag tag-right" data-id="rect" href="#visual" data-slide="2" data-depth="40" data-rot="12" data-x="240" data-y="260" aria-label="Portfolio visuals">
             <span class="hook"></span>
             <span class="tag-face">
               <span class="tag-meta">TAG 03</span>
               <span class="tag-title">Portfolio</span>
-              <span class="tag-desc">This living playground mixing shaders, motion copy, and kawaii chrome.</span>
+              <span class="tag-desc">Dark, glassy, chrome-themed portfolio with an animated avitar, crisp typography, and clear IA.</span>
             </span>
           </a>
         </div>
@@ -145,30 +146,103 @@ and improving regression reliability across modules.</li>
       <div class="visual-carousel glass-panel">
         <button class="carousel-nav prev" aria-label="Previous project">&#8592;</button>
         <div class="carousel-track">
-          <article class="visual-slide is-active" data-title="DeepBlue Tidelines">
-            <div class="visual-image" style="background-image:linear-gradient(135deg, rgba(255,255,255,.12), rgba(10,7,10,.6)), url('./assets/visual-deepblue.jpg');"></div>
+          <article class="visual-slide is-active" data-title="Deep Blue">
+            <div class="visual-image">
+              <div class="visual-gallery" style="--columns:2;">
+                <figure class="visual-card">
+                  <button type="button" class="visual-card-trigger" aria-label="Expand Deep Blue update contact screen" data-full="./assets/visuals/deep-blue-dashboard.jpg">
+                    <img src="./assets/visuals/deep-blue-dashboard.jpg" alt="Deep Blue update contact screen floating above the reef" loading="lazy"/>
+                  </button>
+                </figure>
+                <figure class="visual-card">
+                  <button type="button" class="visual-card-trigger" aria-label="Expand Deep Blue create and search interface" data-full="./assets/visuals/deep-blue-create.jpg">
+                    <img src="./assets/visuals/deep-blue-create.jpg" alt="Deep Blue create and search interface with playful fish" loading="lazy"/>
+                  </button>
+                </figure>
+                <figure class="visual-card">
+                  <button type="button" class="visual-card-trigger" aria-label="Expand Deep Blue login and sign up form" data-full="./assets/visuals/deep-blue-login.jpg">
+                    <img src="./assets/visuals/deep-blue-login.jpg" alt="Deep Blue login and sign up form set against deep sea gradients" loading="lazy"/>
+                  </button>
+                </figure>
+                <figure class="visual-card">
+                  <button type="button" class="visual-card-trigger" aria-label="Expand Deep Blue landing screen" data-full="./assets/visuals/deep-blue-landing.jpg">
+                    <img src="./assets/visuals/deep-blue-landing.jpg" alt="Deep Blue landing screen with boat and diver illustration" loading="lazy"/>
+                  </button>
+                </figure>
+              </div>
+            </div>
             <div class="visual-overlay">
-              <h3>DeepBlue</h3>
-              <p>a dive-themed contact manager web application</p>
+              <h3>Deep Blue</h3>
+              <p>Dive-themed contact manager across auth, CRUD, and marketing touchpoints.</p>
             </div>
           </article>
           <article class="visual-slide" data-title="Toki">
-            <div class="visual-image" style="background-image:linear-gradient(135deg, rgba(255,255,255,.12), rgba(10,7,10,.6)), url('./assets/visual-toki.jpg');"></div>
+            <div class="visual-image">
+              <div class="visual-gallery" style="--columns:3;">
+                <figure class="visual-card">
+                  <button type="button" class="visual-card-trigger" aria-label="Expand Toki login screen visual" data-full="./assets/visuals/toki-login.png">
+                    <img src="./assets/visuals/toki-login.png" alt="Toki login screen glowing over a starfield backdrop" loading="lazy"/>
+                  </button>
+                </figure>
+                <figure class="visual-card">
+                  <button type="button" class="visual-card-trigger" aria-label="Expand Toki dashboard visual" data-full="./assets/visuals/toki-today.png">
+                    <img src="./assets/visuals/toki-today.png" alt="Toki dashboard showing weather, tasks, events, and NASA image of the day" loading="lazy"/>
+                  </button>
+                </figure>
+                <figure class="visual-card">
+                  <button type="button" class="visual-card-trigger" aria-label="Expand Toki calendar view" data-full="./assets/visuals/toki-calendar.png">
+                    <img src="./assets/visuals/toki-calendar.png" alt="Toki calendar view with upcoming events panel" loading="lazy"/>
+                  </button>
+                </figure>
+                <figure class="visual-card">
+                  <button type="button" class="visual-card-trigger" aria-label="Expand Toki tasks list" data-full="./assets/visuals/toki-tasks.png">
+                    <img src="./assets/visuals/toki-tasks.png" alt="Toki tasks list with priority filters" loading="lazy"/>
+                  </button>
+                </figure>
+                <figure class="visual-card">
+                  <button type="button" class="visual-card-trigger" aria-label="Expand Toki weather forecast view" data-full="./assets/visuals/toki-weather.png">
+                    <img src="./assets/visuals/toki-weather.png" alt="Toki weather forecast layout with hourly and weekly details" loading="lazy"/>
+                  </button>
+                </figure>
+                <figure class="visual-card">
+                  <button type="button" class="visual-card-trigger" aria-label="Expand Toki parking tracker" data-full="./assets/visuals/toki-parking.png">
+                    <img src="./assets/visuals/toki-parking.png" alt="Toki real-time parking availability dashboard" loading="lazy"/>
+                  </button>
+                </figure>
+              </div>
+            </div>
             <div class="visual-overlay">
               <h3>Toki Orbit Planner</h3>
               <p>Daily rituals orbiting NASA imagery and animated chrome planets.</p>
             </div>
           </article>
           <article class="visual-slide" data-title="Pink Chrome Portfolio">
-            <div class="visual-image" style="background-image:linear-gradient(135deg, rgba(255,255,255,.12), rgba(10,7,10,.6)), url('./assets/visual-portfolio.jpg');"></div>
+            <div class="visual-image">
+              <div class="visual-gallery" style="--columns:1;">
+                <figure class="visual-card">
+                  <button type="button" class="visual-card-trigger" aria-label="Expand portfolio hero overview" data-full="./assets/visuals/portfolio.jpg">
+                    <img src="./assets/visuals/portfolio.jpg" alt="Personal portfolio hero showing Chrystel avatar and intro copy on deep magenta gradient" loading="lazy"/>
+                  </button>
+                </figure>
+              </div>
+            </div>
             <div class="visual-overlay">
-              <h3>Pink Chrome Portfolio</h3>
-              <p>Interactive keychain hero with reactive chains and 3D tilt.</p>
+              <h3>Personal Portfolio</h3>
+              <p>Pink chrome interface featuring custom illustrations, cursor FX, and interactive keychain navigation.</p>
             </div>
           </article>
         </div>
         <button class="carousel-nav next" aria-label="Next project">&#8594;</button>
         <div class="carousel-dots" role="tablist"></div>
+      </div>
+
+      <div class="visual-lightbox" role="dialog" aria-modal="true" aria-label="Expanded project visual" hidden>
+        <div class="visual-lightbox__backdrop" data-lightbox-close></div>
+        <figure class="visual-lightbox__frame">
+          <img src="" alt=""/>
+          <figcaption class="visual-lightbox__caption"></figcaption>
+        </figure>
+        <button type="button" class="visual-lightbox__close" aria-label="Close expanded visual" data-lightbox-close>&times;</button>
       </div>
     </section>
 

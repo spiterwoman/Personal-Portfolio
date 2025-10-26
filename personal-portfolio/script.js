@@ -1,6 +1,8 @@
 // util
 const lerp = (a,b,t)=>a+(b-a)*t;
 
+let visualCarouselController = null;
+
 // DOM
 const root = document.getElementById('keychain');
 const cursor = document.getElementById('cursor');
@@ -189,6 +191,25 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
   link.addEventListener('click', evt=>{
     evt.preventDefault();
     target.scrollIntoView({behavior:'smooth', block:'start'});
+
+    if(link.dataset.slide !== undefined){
+      const slideIndex = Number(link.dataset.slide);
+      if(Number.isFinite(slideIndex)){
+        const send = ()=>{
+          if(visualCarouselController?.goTo){
+            visualCarouselController.goTo(slideIndex);
+          }else{
+            const carouselEl = document.querySelector('.visual-carousel');
+            carouselEl?.dispatchEvent(new CustomEvent('carousel:goto',{detail:slideIndex}));
+          }
+        };
+        if(href === '#visual'){
+          setTimeout(send, 220);
+        }else{
+          send();
+        }
+      }
+    }
   });
 });
 
@@ -232,6 +253,91 @@ if(carousel){
     clearInterval(timer);
     timer = setInterval(()=> goTo(index + 1), 7000);
   };
+
+  const triggers = [...carousel.querySelectorAll('.visual-card-trigger')];
+  const lightbox = document.querySelector('.visual-lightbox');
+  const lightboxImg = lightbox?.querySelector('img');
+  const lightboxCaption = lightbox?.querySelector('.visual-lightbox__caption');
+  const lightboxCloseButtons = lightbox ? [...lightbox.querySelectorAll('[data-lightbox-close]')] : [];
+  let lastFocus;
+
+  const openLightbox = (trigger)=>{
+    if(!lightbox) return;
+    const img = trigger.querySelector('img');
+    const src = trigger.dataset.full || img?.currentSrc || img?.src;
+    if(lightboxImg){
+      lightboxImg.src = src;
+      lightboxImg.alt = img?.alt || '';
+    }
+    if(lightboxCaption) lightboxCaption.textContent = img?.alt || '';
+    lightbox.removeAttribute('hidden');
+    requestAnimationFrame(()=> lightbox.classList.add('is-open'));
+    document.body.classList.add('no-scroll');
+    lastFocus = document.activeElement;
+    clearInterval(timer);
+    lightbox.querySelector('.visual-lightbox__close')?.focus({preventScroll:true});
+  };
+
+  const closeLightbox = ()=>{
+    if(!lightbox) return;
+    lightbox.classList.remove('is-open');
+    const handleHide = ()=>{
+      lightbox.setAttribute('hidden','');
+    };
+    const hideFallback = setTimeout(()=>{
+      if(!lightbox.hasAttribute('hidden')) handleHide();
+    }, 320);
+    lightbox.addEventListener('transitionend', (event)=>{
+      if(event.target === lightbox){
+        clearTimeout(hideFallback);
+        handleHide();
+      }
+    }, {once:true});
+    if(lightboxImg){
+      lightboxImg.src = '';
+      lightboxImg.alt = '';
+    }
+    if(lightboxCaption) lightboxCaption.textContent = '';
+    document.body.classList.remove('no-scroll');
+    lastFocus?.focus?.();
+    restartAuto();
+  };
+
+  triggers.forEach(trigger=>{
+    trigger.addEventListener('click', ()=> openLightbox(trigger));
+  });
+
+  carousel.addEventListener('carousel:goto', event=>{
+    const detail = event.detail;
+    const targetIndex = typeof detail === 'object' && detail !== null && 'index' in detail
+      ? Number(detail.index)
+      : Number(detail);
+    if(Number.isFinite(targetIndex)){
+      goTo(targetIndex);
+    }
+  });
+
+  visualCarouselController = {
+    goTo,
+    get index(){return index;},
+    get length(){return slides.length;}
+  };
+
+  lightboxCloseButtons.forEach(btn=>{
+    btn.addEventListener('click', closeLightbox);
+  });
+
+  lightbox?.addEventListener('click', (event)=>{
+    if(event.target.dataset.lightboxClose !== undefined){
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (event)=>{
+    if(event.key === 'Escape' && lightbox?.classList.contains('is-open')){
+      closeLightbox();
+    }
+  });
 
   prev?.addEventListener('click', ()=> goTo(index - 1));
   next?.addEventListener('click', ()=> goTo(index + 1));
