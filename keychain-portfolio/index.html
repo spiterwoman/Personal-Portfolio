@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chrystel's Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+  <header class="nav">
+    <a href="#home" class="logo" aria-label="Chrystel Geno home">
+      <img src="./assets/logo.gif" alt="Animated chrome star logo"/>
+    </a>
+    <nav>
+      <a href="#home">Intro</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#works">Projects</a>
+      <a href="#visual">Visuals</a>
+      <a href="#contact" class="pill">Contact</a>
+    </nav>
+  </header>
+
+  <div class="bg-gallery" aria-hidden="true">
+    <img src="./assets/pink-starburst.png" alt="" style="--x:12%; --y:22%; --scale:1.1; --delay:0s;">
+    <img src="./assets/chrome-star.png" alt="" style="--x:78%; --y:30%; --scale:0.85; --delay:5s;">
+    <img src="./assets/chrome-orbit.png" alt="" style="--x:68%; --y:78%; --scale:1; --delay:9s;">
+    <img src="./assets/pink-starburst.png" alt="" style="--x:16%; --y:150%; --scale:0.95; --delay:6s;">
+    <img src="./assets/chrome-star.png" alt="" style="--x:82%; --y:180%; --scale:0.8; --delay:11s;">
+    <img src="./assets/chrome-orbit.png" alt="" style="--x:44%; --y:210%; --scale:1.05; --delay:15s;">
+  </div>
+
+  <main>
+    <section id="home" class="intro glass-panel">
+      <figure class="intro-media">
+        <img src="./assets/intro-portrait.gif" alt="Chrystel Geno portrait illustration"/>
+      </figure>
+      <div class="intro-copy">
+        <p class="eyebrow">INTRO</p>
+        <h1>hi, <span class="highlight">chrystel</span> here.<span class="blink">|</span></h1>
+        <p class="intro-lede">I create stuff sometimes.</p>
+        <p class="intro-body">I am a software engineer from Orlando, Florida. I'm fascinated by large-scale, high-impact products and contributing to major feature launches in industry-leading services.</p>
+        <div class="intro-actions">
+          <a href="#works" class="ghost-link">Jump to projects</a>
+          <a href="#visual" class="ghost-link">See Experience</a>
+        </div>
+      </div>
+      <div class="scroll">Scroll to explore</div>
+    </section>
+
+    <section id="about" class="about glass-panel">
+      <div class="about-inner">
+        <div class="about-copy">
+          <h2>About me</h2>
+          <p>I am currently persuing my <span class="highlight">Bachelor's in Computer Science</span> degree at the <span class="highlight">University of Central Florida</span> (Go Knights!⚔️).</p>
+          <p>In my free time, I love experimenting with new game development ideas, tinkering on my project car  and playing video games. Oh, I am also on the hunt for the best matcha around!</p>
+        </div>
+        <figure class="about-portrait">
+          <img src="./assets/about-portrait.png" alt="Chrystel Geno chibi illustration"/>
+        </figure>
+      </div>
+    </section>
+
+    <section id="experience" class="experience glass-panel">
+      <div class="experience-header">
+        <p class="eyebrow">Experience</p>
+        <h2>Amazon &mdash; Software Development Engineer Intern</h2>
+        <span class="exp-dates">May 2025 &mdash; August 2025</span>
+      </div>
+      <div class="experience-body">
+        <ul>
+          <li>Designed and implemented an end-to-end solution impacting <span class="highlight">700,000+ Amazon sellers</span>, enabling them to
+configure alignment and rotation options for custom products in Seller Central, surfaced to customers on
+Amazon.com via a feature flag</li>
+          <li>Developed front-end UI components using <span class="highlight">React</span>, <span class="highlight">TypeScript</span>, <span class="highlight">JavaScript</span>, and <span class="highlight">SCSS</span>, incorporating
+usability testing and stakeholder feedback to build accessible, modular interfaces.</li>
+          <li>Internationalized the feature across <span class="highlight">9 countries</span>, expanding availability to global sellers and aligning with
+Amazon's multi-market product customization goals.</li>
+          <li>Built robust unit and integration tests using Jest and React Testing Library, achieving high test coverage
+and improving regression reliability across modules.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="works" class="keychain-section">
+      <div class="section-heading glass-panel">
+        <p class="eyebrow">Projects</p>
+        <h2>Project spotlights</h2>
+        <p>Each tag highlights my favorite projects so far!</p>
+      </div>
+
+      <div class="keychain-wrap">
+        <div id="keychain" class="keychain" aria-label="Interactive keychain">
+          <div class="ring star">
+            <img class="star-ring" src="./assets/star-ring.png" alt="star keychain ring"/>
+            <div class="ring-hook" aria-hidden="true"></div>
+          </div>
+
+          <div class="arms" aria-hidden="true">
+            <img class="arm" data-target="tri"  src="./assets/chain-link.png" alt="chain to DeepBlue tag"/>
+            <img class="arm" data-target="oval" src="./assets/chain-link.png" alt="chain to Toki tag"/>
+            <img class="arm" data-target="rect" src="./assets/chain-link.png" alt="chain to Portfolio tag"/>
+          </div>
+
+          <a class="tag tag-left" data-id="tri" href="#visual" data-depth="42" data-rot="-10" data-x="-240" data-y="260" aria-label="DeepBlue visual projects">
+            <span class="hook"></span>
+            <span class="tag-face">
+              <span class="tag-meta">TAG 01</span>
+              <span class="tag-title">DeepBlue</span>
+              <span class="tag-desc">A minimal LAMP web app for organizing contacts with quick search, add/edit, and notes—wrapped in an ocean-inspired, responsive UI.</span>
+            </span>
+          </a>
+
+          <a class="tag tag-mid" data-id="oval" href="#visual" data-depth="34" data-rot="2" data-x="0" data-y="240" aria-label="Toki visual projects">
+            <span class="hook"></span>
+            <span class="tag-face">
+              <span class="tag-meta">TAG 02</span>
+              <span class="tag-title">Toki</span>
+              <span class="tag-desc">MERN app with a Daily Summary (tasks, events, priority), Calendar, Weather (emoji + highs/lows + sunrise/sunset), NASA Photo of the Day, and UCF Parking Tracker—with glassmorphism and a starry background.</span>
+            </span>
+          </a>
+
+          <a class="tag tag-right" data-id="rect" href="#builds" data-depth="40" data-rot="12" data-x="240" data-y="260" aria-label="Portfolio builds">
+            <span class="hook"></span>
+            <span class="tag-face">
+              <span class="tag-meta">TAG 03</span>
+              <span class="tag-title">Portfolio</span>
+              <span class="tag-desc">This living playground mixing shaders, motion copy, and kawaii chrome.</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="visual" class="visual-section">
+      <div class="visual-header">
+        <p class="eyebrow">Visual showcase</p>
+      </div>
+
+      <div class="visual-carousel glass-panel">
+        <button class="carousel-nav prev" aria-label="Previous project">&#8592;</button>
+        <div class="carousel-track">
+          <article class="visual-slide is-active" data-title="DeepBlue Tidelines">
+            <div class="visual-image" style="background-image:linear-gradient(135deg, rgba(255,255,255,.12), rgba(10,7,10,.6)), url('./assets/visual-deepblue.jpg');"></div>
+            <div class="visual-overlay">
+              <h3>DeepBlue</h3>
+              <p>a dive-themed contact manager web application</p>
+            </div>
+          </article>
+          <article class="visual-slide" data-title="Toki">
+            <div class="visual-image" style="background-image:linear-gradient(135deg, rgba(255,255,255,.12), rgba(10,7,10,.6)), url('./assets/visual-toki.jpg');"></div>
+            <div class="visual-overlay">
+              <h3>Toki Orbit Planner</h3>
+              <p>Daily rituals orbiting NASA imagery and animated chrome planets.</p>
+            </div>
+          </article>
+          <article class="visual-slide" data-title="Pink Chrome Portfolio">
+            <div class="visual-image" style="background-image:linear-gradient(135deg, rgba(255,255,255,.12), rgba(10,7,10,.6)), url('./assets/visual-portfolio.jpg');"></div>
+            <div class="visual-overlay">
+              <h3>Pink Chrome Portfolio</h3>
+              <p>Interactive keychain hero with reactive chains and 3D tilt.</p>
+            </div>
+          </article>
+        </div>
+        <button class="carousel-nav next" aria-label="Next project">&#8594;</button>
+        <div class="carousel-dots" role="tablist"></div>
+      </div>
+    </section>
+
+    <section id="builds" class="builds-section">
+      <div class="builds-header">
+        <p class="eyebrow">Non-visual builds</p>
+      </div>
+
+      <div class="builds-grid">
+        <article class="build glass-panel">
+          <h3>MySPIM: Mini MIPS Processor Simulator</h3>
+          <p>Single-cycle MIPS datapath in <span class="highlight">C</span> (Unix). Executes 14 core instructions end-to-end, with modular ALU, control, and PC update logic. Enforces memory alignment and honors control signals.</p>
+          <span class="build-tags"><span class="highlight">C</span> / Unix / Systems Programming</span>
+        </article>
+        <article class="build glass-panel">
+          <h3>Treasure Coordinates Parser</h3>
+          <p><span class="highlight">Java</span> backtracking + parsing to generate all valid (x,y) pairs from a numeric string while enforcing number-format rules.</p>
+          <span class="build-tags"><span class="highlight">Java</span> / Algorithms / Backtracking</span>
+        </article>
+        <article class="build glass-panel">
+          <h3>Enhanced Text Preview</h3>
+          <p>Built core UI + logic to accurately preview customizable text on products in Seller Central (rotation, alignment, constraints). Shipped production-ready React/TypeScript components, state management, validation, and tests under feature flags across multiple marketplaces.</p>
+          <span class="build-tags"><span class="highlight">React</span> / <span class="highlight">TypeScript</span> / Jest+RTL / Design Docs</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="footer glass-panel">
+    <h2>Contact</h2>
+    <p>Let&rsquo;s collaborate!</p>
+    <div class="socials">
+      <a href="mailto:chrystelg1@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm0 2v.35l8 5 8-5V7l-8 5-8-5z" fill="currentColor"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/chrystelgeno/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3.2v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.6-2.38 3.26V21H8.2V9h3.07v1.64h.04c.43-.82 1.48-1.68 3.04-1.68 3.25 0 3.85 2.14 3.85 4.92V21H19zM5 9H2V21h3V9zm-1.5-6A1.76 1.76 0 1 0 5.26 4.76 1.76 1.76 0 0 0 3.5 3z" fill="currentColor"/></svg>
+      </a>
+      <a href="https://github.com/spiterwoman" target="_blank" rel="noreferrer" aria-label="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.14-1.1-1.45-1.1-1.45-.9-.62.07-.61.07-.61 1 .07 1.52 1.03 1.52 1.03.89 1.52 2.34 1.08 2.91.82a2.1 2.1 0 0 1 .63-1.32c-2.22-.25-4.55-1.11-4.55-4.94a3.87 3.87 0 0 1 1.03-2.68 3.6 3.6 0 0 1 .1-2.65s.84-.27 2.75 1.03a9.37 9.37 0 0 1 5 0c1.9-1.3 2.74-1.03 2.74-1.03a3.6 3.6 0 0 1 .1 2.65 3.87 3.87 0 0 1 1.03 2.68c0 3.84-2.34 4.68-4.56 4.93a2.36 2.36 0 0 1 .67 1.83v2.71c0 .27.18.58.69.48A10 10 0 0 0 12 2z" fill="currentColor"/></svg>
+      </a>
+    </div>
+    <p class="tiny">All content <span id="y"></span> Chrystel Geno.</p>
+  </footer>
+
+  <div id="cursor" class="cursor"></div>
+  <script src="./script.js"></script>
+</body>
+</html>
