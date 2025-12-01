@@ -832,6 +832,20 @@ body.no-scroll{overflow:hidden;}
   letter-spacing:.02em;
   color:rgba(245,246,248,.82);
 }
+
+.visual-gallery--phones .visual-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .visual-gallery--phones {
+    --columns: 2;
+  }
+}
+
 .visual-lightbox__close{
   position:absolute;
   top:26px;
