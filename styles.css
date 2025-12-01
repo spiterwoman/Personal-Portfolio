@@ -833,16 +833,29 @@ body.no-scroll{overflow:hidden;}
   color:rgba(245,246,248,.82);
 }
 
+.visual-gallery--phones {
+  display: flex;
+  justify-content: center;
+  gap: 1.75rem;
+}
+
+.visual-gallery--phones .visual-card {
+  flex: 0 0 auto;
+}
+
 .visual-gallery--phones .visual-card img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
+  display: block;
+  height: 360px;  
+  width: auto;     
 }
 
 @media (max-width: 900px) {
   .visual-gallery--phones {
-    --columns: 2;
+    flex-wrap: wrap;
+  }
+
+  .visual-gallery--phones .visual-card img {
+    height: 260px;
   }
 }
 
