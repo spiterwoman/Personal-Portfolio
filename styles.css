@@ -833,29 +833,34 @@ body.no-scroll{overflow:hidden;}
   color:rgba(245,246,248,.82);
 }
 
+/* Miffy's Matcha Cafe – phone-style gallery */
 .visual-gallery--phones {
   display: flex;
+  flex-wrap: wrap;          /* <— wrap on ALL screen sizes */
   justify-content: center;
-  gap: 1.75rem;
+  gap: 1.5rem;
 }
 
 .visual-gallery--phones .visual-card {
-  flex: 0 0 auto;
+  flex: 0 1 190px;          /* base width per phone card */
 }
 
 .visual-gallery--phones .visual-card img {
   display: block;
-  height: 360px;  
-  width: auto;     
+  width: 100%;
+  height: auto;
+  max-height: 420px;        /* keep them tall but not insane */
+  border-radius: 18px;      /* optional: match your rounded look */
 }
 
+/* Slightly smaller on narrow screens */
 @media (max-width: 900px) {
-  .visual-gallery--phones {
-    flex-wrap: wrap;
+  .visual-gallery--phones .visual-card {
+    flex: 0 1 150px;
   }
 
   .visual-gallery--phones .visual-card img {
-    height: 260px;
+    max-height: 340px;
   }
 }
 
